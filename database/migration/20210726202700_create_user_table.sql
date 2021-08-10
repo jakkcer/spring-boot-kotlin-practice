@@ -1,0 +1,7 @@
+CREATE TABLE user (
+    id INT(10) NOT NULL,
+    name VARCHAR(16) NOT NULL,
+    age INT(10) NOT NULL,
+    profile VARCHAR(64) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
