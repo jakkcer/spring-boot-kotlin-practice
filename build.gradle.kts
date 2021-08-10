@@ -24,8 +24,6 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.mybatis:mybatis:3.5.6")
 	implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.2.1")
-	implementation("mysql:mysql-connector-java:8.0.23")
-	mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -43,4 +41,9 @@ tasks.withType<Test> {
 mybatisGenerator {
 	verbose = true
 	configFile = "${projectDir}/src/main/resources/generatorConfig.xml"
+
+	dependencies {
+		mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
+		mybatisGenerator("mysql:mysql-connector-java:8.0.23")
+	}
 }
