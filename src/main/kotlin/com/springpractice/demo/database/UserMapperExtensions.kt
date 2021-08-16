@@ -1,14 +1,14 @@
 /*
  * Auto-generated file. Created by MyBatis Generator
  */
-package database
+package com.springpractice.demo.database
 
-import database.UserDynamicSqlSupport.User
-import database.UserDynamicSqlSupport.User.age
-import database.UserDynamicSqlSupport.User.id
-import database.UserDynamicSqlSupport.User.name
-import database.UserDynamicSqlSupport.User.profile
-import database.UserRecord
+import com.springpractice.demo.database.UserDynamicSqlSupport.User
+import com.springpractice.demo.database.UserDynamicSqlSupport.User.age
+import com.springpractice.demo.database.UserDynamicSqlSupport.User.id
+import com.springpractice.demo.database.UserDynamicSqlSupport.User.name
+import com.springpractice.demo.database.UserDynamicSqlSupport.User.profile
+import com.springpractice.demo.database.UserRecord
 import org.mybatis.dynamic.sql.SqlBuilder.isEqualTo
 import org.mybatis.dynamic.sql.util.kotlin.*
 import org.mybatis.dynamic.sql.util.kotlin.mybatis3.*

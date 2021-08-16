@@ -1,9 +1,9 @@
 /*
  * Auto-generated file. Created by MyBatis Generator
  */
-package database
+package com.springpractice.demo.database
 
-import database.UserRecord
+import com.springpractice.demo.database.UserRecord
 import org.apache.ibatis.annotations.DeleteProvider
 import org.apache.ibatis.annotations.InsertProvider
 import org.apache.ibatis.annotations.Mapper

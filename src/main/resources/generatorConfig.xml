@@ -15,13 +15,13 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <javaModelGenerator
-            targetPackage="database"
+            targetPackage="com.springpractice.demo.database"
             targetProject="src/main/kotlin">
         </javaModelGenerator>
         <javaClientGenerator
-            targetPackage="database"
+            targetPackage="com.springpractice.demo.database"
             targetProject="src/main/kotlin">
         </javaClientGenerator>
-        <table tableName="user" />
+        <table tableName="%" />
     </context>
 </generatorConfiguration>
