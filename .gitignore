@@ -227,3 +227,6 @@ $RECYCLE.BIN/
 
 # docker
 docker/db
+
+# frontend
+node_modules/
