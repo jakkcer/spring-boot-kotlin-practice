@@ -9,19 +9,24 @@
         </commentGenerator>
         <jdbcConnection
             driverClass="com.mysql.cj.jdbc.Driver"
-            connectionURL="jdbc:mysql://127.0.0.1:3306/example"
+            connectionURL="jdbc:mysql://127.0.0.1:3306/book_manager"
             userId="root"
             password="mysql">
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
+        <javaTypeResolver>
+            <property name="userJSR310Types" value="true"/>
+        </javaTypeResolver>
         <javaModelGenerator
-            targetPackage="com.springpractice.demo.database"
+            targetPackage="com.springpractice.demo.infrastructure.database.record"
             targetProject="src/main/kotlin">
         </javaModelGenerator>
         <javaClientGenerator
-            targetPackage="com.springpractice.demo.database"
+            targetPackage="com.springpractice.demo.infrastructure.database.mapper"
             targetProject="src/main/kotlin">
         </javaClientGenerator>
-        <table tableName="%" />
+        <table tableName="%">
+            <columnOverride column="role_type" typeHandler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.springpractice.demo.domain.enum.RoleType"/>
+        </table>
     </context>
 </generatorConfiguration>
