@@ -230,3 +230,4 @@ docker/db
 
 # frontend
 node_modules/
+!frontend/build
