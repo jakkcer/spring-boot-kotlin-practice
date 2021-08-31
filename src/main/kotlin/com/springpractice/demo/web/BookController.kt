@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("book")
 @CrossOrigin(origins = ["http://localhost:8081"], allowCredentials = "true")
-class BookController (
+class BookController(
     private val bookService: BookService
-    ){
+) {
     @GetMapping("/list")
     fun getList(): GetBookListResponse {
         val bookList = bookService.getList().map {
