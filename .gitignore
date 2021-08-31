@@ -224,3 +224,9 @@ ehthumbs_vista.db
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+# docker
+docker/db
+
+# frontend
+node_modules/
