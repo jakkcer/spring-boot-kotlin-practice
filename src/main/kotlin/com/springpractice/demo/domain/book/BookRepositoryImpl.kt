@@ -3,6 +3,7 @@ package com.springpractice.demo.domain.book
 import com.springpractice.demo.domain.rental.Rental
 import com.springpractice.demo.infrastructure.database.mapper.BookWithRentalMapper
 import com.springpractice.demo.infrastructure.database.mapper.select
+import com.springpractice.demo.infrastructure.database.mapper.selectByPrimaryKey
 import com.springpractice.demo.infrastructure.database.record.BookWithRentalRecord
 import org.springframework.stereotype.Repository
 
@@ -31,5 +32,9 @@ class BookRepositoryImpl(
             )
         }
         return BookWithRental(book, rental)
+    }
+
+    override fun findWithRental(id: Long): BookWithRental? {
+        return bookWithRentalMapper.selectByPrimaryKey(id)?.let { toModel(it) }
     }
 }
