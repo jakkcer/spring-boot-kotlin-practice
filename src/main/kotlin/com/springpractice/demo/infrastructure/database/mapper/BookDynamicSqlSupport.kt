@@ -4,7 +4,7 @@
 package com.springpractice.demo.infrastructure.database.mapper
 
 import java.sql.JDBCType
-import java.util.Date
+import java.time.LocalDate
 import org.mybatis.dynamic.sql.SqlTable
 
 object BookDynamicSqlSupport {
@@ -15,6 +15,6 @@ object BookDynamicSqlSupport {
 
         val author = column<String>("author", JDBCType.VARCHAR)
 
-        val releaseDate = column<Date>("release_date", JDBCType.DATE)
+        val releaseDate = column<LocalDate>("release_date", JDBCType.DATE)
     }
 }

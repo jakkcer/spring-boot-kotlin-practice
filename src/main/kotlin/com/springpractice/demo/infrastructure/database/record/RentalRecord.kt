@@ -3,11 +3,11 @@
  */
 package com.springpractice.demo.infrastructure.database.record
 
-import java.util.Date
+import java.time.LocalDateTime
 
 data class RentalRecord(
     var bookId: Long? = null,
     var userId: Long? = null,
-    var rentalDatetime: Date? = null,
-    var returnDeadline: Date? = null
+    var rentalDatetime: LocalDateTime? = null,
+    var returnDeadline: LocalDateTime? = null
 )

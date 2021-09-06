@@ -3,11 +3,11 @@
  */
 package com.springpractice.demo.infrastructure.database.record
 
-import java.util.Date
+import java.time.LocalDate
 
 data class BookRecord(
     var id: Long? = null,
     var title: String? = null,
     var author: String? = null,
-    var releaseDate: Date? = null
+    var releaseDate: LocalDate? = null
 )
