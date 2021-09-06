@@ -28,7 +28,8 @@ data class GetBookDetailResponse(
         model.book.title,
         model.book.author,
         model.book.releaseDate,
-        model.rental?.let { RentalInfo(model.rental) })
+        model.rental?.let { RentalInfo(model.rental) }
+    )
 }
 
 data class RentalInfo(
@@ -40,8 +41,8 @@ data class RentalInfo(
 }
 
 data class RegisterBookRequest(
-    val id:Long,
+    val id: Long,
     val title: String,
-    val author:String,
+    val author: String,
     val releaseDate: LocalDate
 )

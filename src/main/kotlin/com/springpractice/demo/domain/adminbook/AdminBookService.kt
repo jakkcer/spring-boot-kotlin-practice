@@ -11,7 +11,7 @@ class AdminBookService(
 ) {
     @Transactional
     fun register(book: Book) {
-        bookRepository.findWithRental(book.id)?.let { throw IllegalArgumentException("既に存在する書籍ID: ${book.id}")}
+        bookRepository.findWithRental(book.id)?.let { throw IllegalArgumentException("既に存在する書籍ID: ${book.id}") }
         bookRepository.register(book)
     }
 }
