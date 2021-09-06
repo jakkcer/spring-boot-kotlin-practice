@@ -1,9 +1,12 @@
 # spring-boot-kotlin-practice
 ## Database作成
-### 使い捨てのMYSQLを作成するコマンド
-databaseは `example` を使う
 ```
-$ docker container run --rm -d -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_DATABSE=example -p 3306:3306 --name mysql mysql
+$ cd docker
+$ docker-compose up -d
+$ mysql -uroot -h 127.0.0.1 --port 3306 -pmysql
+mysql> CREATE DATABASE book_manager;
+# migration/202108232031_create_book_manager_tables.sqlでCreateTable実行
+# testdata/02.sqlで初期データ挿入
 ```
 
 ## ktlint
