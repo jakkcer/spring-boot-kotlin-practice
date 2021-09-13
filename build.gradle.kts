@@ -52,6 +52,7 @@ mybatisGenerator {
 }
 
 ktlint {
+    version.set("0.42.1")
     enableExperimentalRules.set(true)
     filter {
         exclude("**/database/**")

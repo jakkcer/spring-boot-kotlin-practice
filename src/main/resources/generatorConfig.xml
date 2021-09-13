@@ -15,7 +15,7 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <javaTypeResolver>
-            <property name="userJSR310Types" value="true"/>
+            <property name="useJSR310Types" value="true"/>
         </javaTypeResolver>
         <javaModelGenerator
             targetPackage="com.springpractice.demo.infrastructure.database.record"
