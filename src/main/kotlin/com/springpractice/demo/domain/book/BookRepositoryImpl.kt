@@ -13,7 +13,7 @@ import com.springpractice.demo.infrastructure.database.record.BookWithRentalReco
 import org.springframework.stereotype.Repository
 import java.time.LocalDate
 
-@Suppress("SpringJacaInjectPointsAutowiringInspection")
+@Suppress("SpringJavaInjectPointsAutowiringInspection")
 @Repository
 class BookRepositoryImpl(
     private val bookWithRentalMapper: BookWithRentalMapper,
