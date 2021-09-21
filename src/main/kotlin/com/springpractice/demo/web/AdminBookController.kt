@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("admin/book")
-@CrossOrigin(origins = ["http://localhost:8081"], allowCredentials = "true")
+@CrossOrigin
 class AdminBookController(
     private val adminBookService: AdminBookService
 ) {

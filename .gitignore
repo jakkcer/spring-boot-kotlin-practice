@@ -227,6 +227,7 @@ $RECYCLE.BIN/
 
 # docker
 docker/db
+docker/redis
 
 # frontend
 node_modules/
