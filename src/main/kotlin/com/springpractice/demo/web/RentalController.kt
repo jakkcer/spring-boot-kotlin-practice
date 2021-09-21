@@ -5,6 +5,8 @@ import com.springpractice.demo.web.form.RentalStartRequest
 import com.springpractice.demo.web.security.BookManagerUserDetails
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.bind.annotation.CrossOrigin
+import org.springframework.web.bind.annotation.DeleteMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -20,5 +22,11 @@ class RentalController(
     fun startRental(@RequestBody request: RentalStartRequest) {
         val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
         rentalService.startRental(request.bookId, user.id)
+    }
+
+    @DeleteMapping("/end/{book_id}")
+    fun endRental(@PathVariable("book_id") bookId: Long) {
+        val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
+        rentalService.endRental(bookId, user.id)
     }
 }
