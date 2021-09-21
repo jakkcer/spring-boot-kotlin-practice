@@ -2,6 +2,7 @@ package com.springpractice.demo.domain.user
 
 import com.springpractice.demo.infrastructure.database.mapper.UserDynamicSqlSupport
 import com.springpractice.demo.infrastructure.database.mapper.UserMapper
+import com.springpractice.demo.infrastructure.database.mapper.selectByPrimaryKey
 import com.springpractice.demo.infrastructure.database.mapper.selectOne
 import com.springpractice.demo.infrastructure.database.record.UserRecord
 import org.mybatis.dynamic.sql.SqlBuilder.isEqualTo
@@ -16,6 +17,11 @@ class UserRepositoryImpl(
         val record = mapper.selectOne {
             where(UserDynamicSqlSupport.User.email, isEqualTo(email))
         }
+        return record?.let { toModel(it) }
+    }
+
+    override fun find(id: Long): User? {
+        val record = mapper.selectByPrimaryKey(id)
         return record?.let { toModel(it) }
     }
 
