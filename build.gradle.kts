@@ -29,6 +29,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.session:spring-session-data-redis")
     implementation("redis.clients:jedis")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
     mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

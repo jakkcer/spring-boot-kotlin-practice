@@ -6,3 +6,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
   jackson:
     property-naming-strategy: SNAKE_CASE
+# ロギングに関する設定
+logging:
+  level:
+    root: INFO
