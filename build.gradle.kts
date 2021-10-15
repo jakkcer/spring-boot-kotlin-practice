@@ -1,3 +1,8 @@
+import com.google.protobuf.gradle.generateProtoTasks
+import com.google.protobuf.gradle.id
+import com.google.protobuf.gradle.plugins
+import com.google.protobuf.gradle.protobuf
+import com.google.protobuf.gradle.protoc
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -5,6 +10,8 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     id("com.thinkimi.gradle.MybatisGenerator") version "2.3"
     id("org.jlleitschuh.gradle.ktlint") version "10.1.0"
+    id("com.google.protobuf") version "0.8.15"
+    id("idea")
     kotlin("jvm") version "1.5.20"
     kotlin("plugin.spring") version "1.5.20"
 }
@@ -15,6 +22,9 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
+    jcenter()
+    google()
 }
 
 dependencies {
@@ -30,6 +40,14 @@ dependencies {
     implementation("org.springframework.session:spring-session-data-redis")
     implementation("redis.clients:jedis")
     implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+
+    implementation("io.grpc:grpc-kotlin-stub:1.0.0")
+    implementation("io.grpc:grpc-netty:1.35.0")
+
+    compileOnly("javax.annotation:javax.annotation-api:1.3.2")
+
     mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.1")
@@ -64,5 +82,25 @@ ktlint {
     enableExperimentalRules.set(true)
     filter {
         exclude("**/database/**")
+    }
+}
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.15.1" }
+    plugins {
+        id("grpc") {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.36.0"
+        }
+        id("grpckt") {
+            artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0:jdk7@jar"
+        }
+    }
+    generateProtoTasks {
+        all().forEach {
+            it.plugins {
+                id("grpc")
+                id("grpckt")
+            }
+        }
     }
 }
