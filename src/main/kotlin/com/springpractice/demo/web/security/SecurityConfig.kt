@@ -20,6 +20,7 @@ class SecurityConfig(private val authenticationService: AuthenticationService) :
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
             .mvcMatchers("/login").permitAll()
+            .mvcMatchers("/greeter/hello/Kotlin").permitAll()
             .mvcMatchers("/admin/**").hasAuthority(RoleType.ADMIN.toString())
             .anyRequest().authenticated()
             .and()

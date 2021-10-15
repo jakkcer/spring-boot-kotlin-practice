@@ -18,19 +18,19 @@ private val logger = LoggerFactory.getLogger(LoggingAdvice::class.java)
 @Aspect
 @Component
 class LoggingAdvice {
-    @Before("execution(* com.springpractice.demo.web.*.*(..))")
-    fun beforeLog(joinPoint: JoinPoint) {
-        val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
-        logger.info("Start: ${joinPoint.signature} userId=${user.id}")
-        logger.info("Class: ${joinPoint.target.javaClass}")
-        logger.info("Session: ${(RequestContextHolder.getRequestAttributes() as ServletRequestAttributes).request.session.id}")
-    }
-
-    @After("execution(* com.springpractice.demo.web.*.*(..))")
-    fun afterLog(joinPoint: JoinPoint) {
-        val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
-        logger.info("End: ${joinPoint.signature} userId=${user.id}")
-    }
+    // @Before("execution(* com.springpractice.demo.web.*.*(..))")
+    // fun beforeLog(joinPoint: JoinPoint) {
+    //     val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
+    //     logger.info("Start: ${joinPoint.signature} userId=${user.id}")
+    //     logger.info("Class: ${joinPoint.target.javaClass}")
+    //     logger.info("Session: ${(RequestContextHolder.getRequestAttributes() as ServletRequestAttributes).request.session.id}")
+    // }
+    //
+    // @After("execution(* com.springpractice.demo.web.*.*(..))")
+    // fun afterLog(joinPoint: JoinPoint) {
+    //     val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
+    //     logger.info("End: ${joinPoint.signature} userId=${user.id}")
+    // }
 
     // @Around("execution(* com.springpractice.demo.web.*.*(..))")
     // fun aroundLog(joinPoint: ProceedingJoinPoint): Any? {

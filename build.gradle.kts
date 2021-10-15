@@ -22,17 +22,22 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
-    gradlePluginPortal()
-    jcenter()
-    google()
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("io.grpc:grpc-kotlin-stub:1.0.0")
+    implementation("io.grpc:grpc-netty:1.35.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.4.2")
+    implementation("io.github.lognet:grpc-spring-boot-starter:4.4.4")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // 一応入れておく
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4")
     implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.2.1")
     implementation("mysql:mysql-connector-java:8.0.23")
@@ -41,15 +46,10 @@ dependencies {
     implementation("redis.clients:jedis")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-
-    implementation("io.grpc:grpc-kotlin-stub:1.0.0")
-    implementation("io.grpc:grpc-netty:1.35.0")
 
     compileOnly("javax.annotation:javax.annotation-api:1.3.2")
 
     mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.1")
     testImplementation("org.assertj:assertj-core:3.19.0")
     testImplementation("org.mockito:mockito-core:3.8.0")
