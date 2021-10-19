@@ -3,7 +3,11 @@ package com.springpractice.demo.grpc
 import example.greeter.GreeterGrpcKt
 import example.greeter.HelloRequest
 import example.greeter.HelloResponse
+import org.lognet.springboot.grpc.GRpcService
 
+@GRpcService
 class GreeterService : GreeterGrpcKt.GreeterCoroutineImplBase() {
-    override suspend fun hello(request: HelloRequest) = HelloResponse.newBuilder().setText("Hello ${request.name}").build()
+    override suspend fun hello(request: HelloRequest) = HelloResponse.newBuilder()
+        .setText("Hello ${request.name}")
+        .build()
 }
