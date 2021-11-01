@@ -22,6 +22,7 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -34,6 +35,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.4.2")
     implementation("io.github.lognet:grpc-spring-boot-starter:4.4.4")
+    implementation("org.jetbrains.exposed:exposed-core:0.29.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.29.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.29.1")
+    implementation("mysql:mysql-connector-java:8.0.23")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // 一応入れておく
