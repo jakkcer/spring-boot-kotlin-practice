@@ -11,7 +11,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 fun main() {
     Database.connect(
         "jdbc:mysql://127.0.0.1:3306/exposed_example",
-        driver = "com.mysql.jdbc.Driver",
+        driver = "com.mysql.cj.jdbc.Driver",
         user = "root",
         password = "mysql"
     )
