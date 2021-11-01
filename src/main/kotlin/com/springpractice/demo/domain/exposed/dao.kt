@@ -39,5 +39,5 @@ object MemberTable : IntIdTable("member") {
 class MemberEntity(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<MemberEntity>(MemberTable)
 
-    var name by Member.name
+    var name by MemberTable.name
 }
