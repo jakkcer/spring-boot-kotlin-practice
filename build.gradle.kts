@@ -40,6 +40,8 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:0.29.1")
     implementation("mysql:mysql-connector-java:8.0.23")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.3")
+    testImplementation("io.mockk:mockk:1.10.6")
 
     // 一応入れておく
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -68,7 +70,10 @@ tasks.withType<KotlinCompile> {
     }
 }
 
-tasks.withType<Test> {
+// tasks.withType<Test> {
+//     useJUnitPlatform()
+// }
+tasks.test {
     useJUnitPlatform()
 }
 
